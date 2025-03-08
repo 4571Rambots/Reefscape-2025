@@ -61,6 +61,6 @@ public final class Constants {
     public static final double kPivotL3Position = -1.4;     // L3 position
     public static final double kPivotL4Position = -1.5;     // L4 position
     public static final double kPivotInPosition = -2.94;    // In position
-    public static final double kPivotParallelPosition = -3.0;  // Parallel to ground
+    public static final double kPivotParallelPosition = -2.1;  // Parallel to ground
   }
 }

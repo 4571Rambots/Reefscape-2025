@@ -64,7 +64,7 @@ public class RobotContainer {
 
     private final MotionMagicVoltage m_request = new MotionMagicVoltage(0);
     private final double kElevatorGravityCompensation = 0.04;
-    private final double kPositionGravityCompensation = -0.6; // Increased gravity compensation
+    private final double kPositionGravityCompensation = 0.9; // Increased gravity compensation
 
     private final SendableChooser<Command> autoChooser;
 
@@ -87,7 +87,7 @@ public class RobotContainer {
     private final MotionMagicVoltage elevatorRequest;
 
     public RobotContainer() {
-        autoChooser = AutoBuilder.buildAutoChooser("Red");
+        autoChooser = AutoBuilder.buildAutoChooser("Blue");
         
         // Initialize the request objects
         pivotRequest = new MotionMagicVoltage(0)
@@ -153,6 +153,9 @@ public class RobotContainer {
         NamedCommands.registerCommand("L2Position", m_elevatorToL2Position);
         NamedCommands.registerCommand("L3Position", m_elevatorToL3Position);
         NamedCommands.registerCommand("L4Position", m_elevatorToL4Position);
+        
+        // Add command for left aligning to reef tag
+        NamedCommands.registerCommand("AlignToReefTagLeft", new AlignToReefTagRelative(false, drivetrain));
         
         configureBindings();
         SmartDashboard.putData("Auto Mode", autoChooser);
